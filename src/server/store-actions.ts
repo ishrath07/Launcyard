@@ -49,7 +49,7 @@ function presetSlugsFor(names: string[]) {
 }
 
 function uniqueSlug(base: string, taken: Set<string>) {
-  let slug = base || "store";
+  const slug = base || "store";
   if (!taken.has(slug) && !slugError(slug)) return slug;
   for (let i = 2; i < 1000; i += 1) {
     const next = `${base}-${i}`.slice(0, 40).replace(/-+$/g, "");
